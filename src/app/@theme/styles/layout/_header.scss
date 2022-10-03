@@ -1,0 +1,217 @@
+#header {
+  background-color: $color-red-09 !important;
+}
+
+.nav-item {
+  margin-left: 15px !important;
+}
+
+.header {
+  &-logo {
+    width: 100px;
+    height: 30px;
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-nav-button {
+    // background-color: white;
+    outline: none;
+    box-shadow: none;
+    margin-top: 5px;
+  }
+
+  &-search {
+    width: 350px;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 15px;
+    display: flex;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 20px;
+    margin-left: auto;
+
+    &-input {
+      width: 100%;
+      border: none;
+      padding-left: 5px;
+      box-shadow: none;
+      outline: none;
+    }
+
+    &-icon {
+      color: $color-red-09;
+      font-size: 18px;
+      padding-right: 5px;
+      padding-top: 2px;
+    }
+
+  }
+
+  &-icon {
+    &-bookmark {
+      margin-left: 15px;
+      font-size: 24px;
+    }
+
+    &-user {
+      margin-left: 14px;
+      font-size: 26px;
+    }
+
+    &-more {
+      font-weight: 100;
+    }
+  }
+
+  &-action {
+    position: relative;
+    margin-right: 20px;
+    padding-left: 20px;
+
+    @media screen and (max-width: 991px) {
+      text-align: left !important;
+      padding-left: 0;
+    }
+  }
+
+  &-bookmark {
+    position: absolute;
+    z-index: 99;
+    min-width: 240px;
+    min-height: 340px;
+    top: 50px;
+    right: -48px;
+    background-color: white;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+
+    &-item {
+      padding: 8px 0 8px 32px;
+      width: 100%;
+
+      &-container-image {
+        width: 40px;
+        height: 55px;
+        border: 0.5px solid rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+
+      &-container-infors {
+        padding-left: 10px;
+      }
+
+      &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &-name {
+        color: black;
+        margin-right: auto;
+        text-align: left !important;
+        font-weight: 600;
+        font-size: 17px;
+      }
+
+      &-vol {
+        color: black;
+        text-align: left !important;
+        font-size: 10px;
+
+        b {
+          color: $color-red-09;
+        }
+      }
+    }
+
+    &-item:hover {
+      background-color: rgb(163, 150, 150, 0.4);
+      cursor: pointer;
+    }
+
+    &-more {
+      color: $color-red-09;
+      width: 80%;
+      margin-left: 20px;
+      height: 45px;
+      border-top: 2px solid $color-red-09;
+    }
+  }
+
+  &-bookmark::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    left: 50%;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+
+    border-bottom: 14px solid white;
+  }
+
+  @media screen and (max-width: 991px) {
+    &-search {
+      margin-left: 12px;
+      width: 250px;
+    }
+
+    &-bookmark {
+      width: 100px;
+      min-height: 350px;
+      left: 0;
+    }
+
+    &-bookmark::after {
+      left: 5%;
+    }
+  }
+}
+
+.link-active {
+  position: relative;
+}
+
+.link-active::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 20%;
+  right: 20%;
+  border-bottom: 4px solid black;
+
+  @media screen and (max-width: 991px) {
+    left: 5px;
+    width: 70px;
+  }
+}
+
+.new-bookmark {
+  position: relative;
+}
+
+.new-bookmark::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  left: -20px;
+  border-radius: 50%;
+  background-color: $color-red-09;
+}
+
+.is-display {
+  display: none !important;
+}

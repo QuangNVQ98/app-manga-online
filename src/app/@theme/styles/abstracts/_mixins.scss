@@ -1,0 +1,89 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin hide-scrollbar {
+  // firefox
+  scrollbar-width: none;
+  // ie edge
+  -ms-overflow-style: none;
+
+  //chrome safari opera
+  &::-webkit-scrollbar{
+    width: 0;
+  }
+}
+
+@mixin show-scrollbar {
+  // firefox
+  scrollbar-width: $scroll-bar-width;
+  // ie edge
+  -ms-overflow-style: auto;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: $scroll-bar-width;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f0f2f5;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #bcc0c4;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #bcc0c4;
+  }
+}
+
+// MEDIA QUERY MANAGER
+/*
+0-600: phone (điện thoại di động)
+600-900: tablet portrait (máy tính bảng)
+900-1200: tablet landscape (máy tính bản nằm ngang)
+[1200-1800]: normal style (mặc định)
+1800px++: màn hình rất lớn
+*/
+
+// $break-point arguments
+/*
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+
+@mixin respond($breakpoint){
+  @if $breakpoint == phone {
+    @media (max-width: 600px) {
+      @content
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 900px) {
+      @content
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 1200px) {
+      @content
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 1800px) {
+      @content
+    }
+  }
+}

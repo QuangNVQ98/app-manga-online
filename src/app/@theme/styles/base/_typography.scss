@@ -1,0 +1,72 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: $default-font-size;
+}
+
+h1,h2 {
+  font-family: 'Nunito';
+  font-size: 49px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.btn {
+  font-size: 16px;
+}
+
+.font-size-12 {
+  font-size: 14px !important;
+}
+
+.font-size-14 {
+  font-size: 14px !important;
+}
+
+.font-size-16 {
+  font-size: 16px !important;
+}
+
+.font-size-17 {
+  font-size: 17px !important;
+}
+
+.font-size-18 {
+  font-size: 18px !important;
+}
+
+.font-size-21 {
+  font-size: 21px !important;
+}
+
+.font-weight-600 {
+  font-weight: 600 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.container-loading {
+  position: absolute;
+  top:0;
+  // background-color: whitesmoke;
+  text-align: center;
+  opacity: 0.4;
+  z-index: 999;
+  width: 100%; 
+  height: 100%;
+}
+
+.spinner-border {
+  width: 150px !important;
+  height: 150px !important;
+  margin-top: 15% !important;
+}
+
+.position-relative {
+  position: relative !important;
+}

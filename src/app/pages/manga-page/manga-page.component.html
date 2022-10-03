@@ -1,0 +1,89 @@
+<div class="manga-container position-relative">
+    <div class="manga-banner">
+      <img src="/assets/images/banner2.jpeg" alt="" class="manga-banner-image" />
+    </div>
+
+    <div class="manga-infors">
+      <div class="manga-infors-common d-flex">
+        <div class="manga-infors-left d-flex flex-column">
+          <img
+            src="{{comic?.thumbnail}}"
+            alt=""
+            class="manga-infors-left-image"
+          />
+          <div class="manga-infors-left-button">Start reading Vol. 1</div>
+        </div>
+
+        <div class="manga-infors-right">
+          <div class="manga-infors-right-heading d-flex">
+            <h1 class="manga-infors-right-heading-name">{{comic?.title}}</h1>
+            <span class="cursor-pointer m-l-auto m-t-auto m-b-auto"
+              ><i
+                class="fa fa-bookmark manga-infors-right-heading-bookmark"
+              ></i
+            ></span>
+          </div>
+          <div class="manga-infors-right-lines row">
+            <span class="col-sm-4">Thể loại: </span>
+            <span class="col-sm-8">{{comic?.category}}</span>
+          </div>
+          <div class="manga-infors-right-lines row">
+            <span class="col-sm-4">Tác giả: </span>
+            <span class="col-sm-8">{{comic?.author}}</span>
+          </div>
+          <div class="manga-infors-right-lines row">
+            <span class="col-sm-4">Trạng thái: </span>
+            <span class="col-sm-8" style="color: black;">{{comic?.status}}</span>
+          </div>
+          <div class="manga-infors-right-lines row">
+            <span class="col-sm-4">Đánh giá: </span>
+            <span class="col-sm-8">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-alt"></i>
+            </span>
+          </div>
+
+          <div class="manga-infors-right-desc">
+            {{comic?.desc}}
+          </div>
+        </div>
+      </div>
+
+      <div class="manga-infors-vol">
+        <div class="manga-infors-vol-heading d-flex">
+          <div class="manga-infors-vol-heading-left d-flex">
+            <span>VOL. </span>
+            <div class="line-vertical"></div>
+            <span>CH. </span>
+            <div class="line-vertical"></div>
+            <span>Slide Stories</span>
+            <div class="line-vertical"></div>
+            <span>Gallery</span>
+          </div>
+          <div class="manga-infors-vol-heading-right m-l-auto">
+            <select name="sort" id="sort">
+              <option value="1">From Lastest</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="manga-infors-vol-list">
+          <ng-template ngFor let-item [ngForOf]="comic?.arr_chapter" let-i="index">
+            <div class="manga-infors-vol-item d-flex align-self-center">
+              <span (click)="goToChapter(item.path)">{{item.name}}</span>
+              <span>{{item.updated}}</span>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="showLoading" class="container-loading">
+      <div class="spinner-border text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>

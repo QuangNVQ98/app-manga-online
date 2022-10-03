@@ -1,0 +1,671 @@
+@charset "UTF-8";
+/*
+0-600: phone (điện thoại di động)
+600-900: tablet portrait (máy tính bảng)
+900-1200: tablet landscape (máy tính bản nằm ngang)
+[1200-1800]: normal style (mặc định)
+1800px++: màn hình rất lớn
+*/
+/*
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  scrollbar-width: 10px;
+  -ms-overflow-style: auto;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+* ::-webkit-scrollbar {
+  width: 10px;
+}
+* ::-webkit-scrollbar-track {
+  background: #f0f2f5;
+}
+* ::-webkit-scrollbar-thumb {
+  background: #bcc0c4;
+}
+* ::-webkit-scrollbar-thumb:hover {
+  background: #bcc0c4;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #000000;
+  color: white;
+}
+body a {
+  color: unset;
+}
+body a:hover {
+  text-decoration: none;
+}
+
+ul > li {
+  list-style-type: none;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+h1, h2 {
+  font-family: "Nunito";
+  font-size: 49px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.btn {
+  font-size: 16px;
+}
+
+.font-size-12 {
+  font-size: 14px !important;
+}
+
+.font-size-14 {
+  font-size: 14px !important;
+}
+
+.font-size-16 {
+  font-size: 16px !important;
+}
+
+.font-size-17 {
+  font-size: 17px !important;
+}
+
+.font-size-18 {
+  font-size: 18px !important;
+}
+
+.font-size-21 {
+  font-size: 21px !important;
+}
+
+.font-weight-600 {
+  font-weight: 600 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.m-r-auto {
+  margin-right: auto !important;
+}
+
+.m-l-auto {
+  margin-left: auto !important;
+}
+
+.m-b-auto {
+  margin-bottom: auto !important;
+}
+
+.m-t-auto {
+  margin-top: auto !important;
+}
+
+#header {
+  background-color: #B90709 !important;
+}
+
+.header-search {
+  width: 350px;
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 15px;
+  display: flex;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 20px;
+}
+.header-search-input {
+  width: 100%;
+  border: none;
+  padding-left: 5px;
+  box-shadow: none;
+  outline: none;
+}
+.header-search-icon {
+  color: #B90709;
+  font-size: 18px;
+  padding-right: 5px;
+  padding-top: 2px;
+}
+.header-icon-bookmark {
+  margin-left: 15px;
+  font-size: 24px;
+}
+.header-icon-user {
+  margin-left: 14px;
+  font-size: 26px;
+}
+.header-icon-more {
+  font-weight: 100;
+}
+.header-action {
+  position: relative;
+  margin-right: 20px;
+  padding-left: 20px;
+}
+.header-bookmark {
+  position: absolute;
+  z-index: 99;
+  min-width: 240px;
+  min-height: 340px;
+  top: 50px;
+  right: -48px;
+  background-color: white;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+}
+.header-bookmark-item {
+  padding: 8px 0 8px 32px;
+  width: 100%;
+}
+.header-bookmark-item-container-image {
+  width: 40px;
+  height: 55px;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.header-bookmark-item-container-infors {
+  padding-left: 10px;
+}
+.header-bookmark-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.header-bookmark-item-name {
+  color: black;
+  margin-right: auto;
+  text-align: left !important;
+  font-weight: 600;
+  font-size: 17px;
+}
+.header-bookmark-item-vol {
+  color: black;
+  text-align: left !important;
+  font-size: 10px;
+}
+.header-bookmark-item-vol b {
+  color: #B90709;
+}
+.header-bookmark-item:hover {
+  background-color: rgba(163, 150, 150, 0.4);
+  cursor: pointer;
+}
+.header-bookmark-more {
+  color: #B90709;
+  width: 80%;
+  margin-left: 20px;
+  height: 45px;
+  border-top: 2px solid #B90709;
+}
+.header-bookmark::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  width: 0;
+  height: 0;
+  left: 50%;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 14px solid white;
+}
+
+.link-active {
+  position: relative;
+}
+
+.link-active::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 20%;
+  right: 20%;
+  border-bottom: 4px solid black;
+}
+
+.new-bookmark {
+  position: relative;
+}
+
+.new-bookmark::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  left: -20px;
+  border-radius: 50%;
+  background-color: #B90709;
+}
+
+.is-display {
+  display: none !important;
+}
+
+.footer {
+  background-color: #B90709;
+  padding-top: 20px;
+  margin-top: 20px;
+  opacity: 0.9;
+  width: 100%;
+  height: 240px;
+}
+.footer-infors-logo {
+  width: 110px;
+  height: 66px;
+  object-fit: cover;
+}
+.footer-infors-slogan {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+.footer-infors-desc {
+  font-size: 13px;
+  font-weight: 100;
+}
+.footer-infors-email {
+  font-style: italic;
+}
+.footer-category-container {
+  width: 90%;
+  height: 60%;
+  margin-top: 60px;
+  margin-left: 50px;
+}
+.footer-category-item {
+  font-size: 14px;
+  border: 1px solid black;
+  width: auto;
+  height: 35px;
+  padding: 6px 12px 0;
+  margin-right: 10px;
+  font-weight: 600;
+  border-radius: 20px;
+  background-color: rgba(165, 47, 47, 0.4);
+  cursor: pointer;
+  opacity: 0.8;
+  font-style: oblique;
+}
+
+.carousel .carousel-item {
+  height: 400px;
+  transition: transform 2s ease, opacity 0.5s ease-out;
+}
+
+.carousel-item img {
+  position: absolute;
+  object-fit: cover !important;
+  top: 0;
+  left: 0;
+  height: auto !important;
+  width: 100% !important;
+}
+
+.banner-icon-slider {
+  background-color: #B90709;
+  border-radius: 50%;
+  font-size: 28px;
+  padding: 15px 22px 15px 24px;
+}
+.banner-item {
+  position: relative;
+}
+.banner-item-container {
+  position: absolute;
+  width: 440px;
+  height: 260px;
+  background-color: white;
+  top: 20%;
+  left: 15%;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 25px 30px 10px;
+}
+.banner-item-category {
+  font-size: 15px;
+  color: black;
+}
+.banner-item-name {
+  font-weight: 900;
+  color: black;
+}
+.banner-item-desc {
+  font-size: 14px;
+  font-weight: 100;
+  padding-right: 10px;
+  font-style: italic;
+  color: black;
+}
+.banner-item-read {
+  width: 150px;
+  height: 35px;
+  text-align: center;
+  background-color: #B90709;
+  margin-top: 8px;
+  float: right;
+}
+.banner-item-read p {
+  color: white;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.content {
+  margin-top: 30px;
+}
+.content-heading {
+  margin-bottom: 40px;
+}
+.content-heading-name {
+  font-size: 32px;
+  font-weight: 600;
+}
+.content-heading-time-item {
+  margin-left: 15px;
+  font-weight: 100;
+}
+.content-comic {
+  position: relative;
+}
+.content-comic-item {
+  width: 230px;
+  max-height: 410px;
+  margin-right: 28px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.content-comic-item-image {
+  width: 100%;
+  height: 100%;
+  width: 230px;
+  height: 325px;
+  object-fit: cover;
+}
+.content-comic-item-name {
+  margin-top: 10px;
+  font-weight: 600;
+  margin-bottom: 10px !important;
+}
+.content-comic-item-vol {
+  font-size: 13px;
+  font-weight: 300;
+  margin-bottom: 2px !important;
+}
+.content-comic-item-time {
+  font-size: 10px;
+  font-weight: 100;
+  font-style: italic;
+}
+.content-comic-item-container {
+  background-color: white;
+  position: absolute;
+  width: 268px;
+  height: 435px;
+  bottom: 15px;
+  left: -20px;
+}
+.content-comic-item-image-hover {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+.content-comic-item-heading {
+  width: 100%;
+  height: 43px;
+  background-color: #B90709;
+  padding: 10px 20px 0;
+}
+.content-comic-item-heading h5 {
+  font-weight: 600;
+}
+.content-comic-item-infors {
+  padding: 10px 30px;
+  color: black;
+}
+.content-comic-item-infors-lines {
+  font-size: 14px;
+}
+.content-comic-item-infors-lines span:first-child {
+  font-weight: 600;
+}
+.content-comic-item-infors-lines span:last-child {
+  font-weight: 600;
+  color: #B90709;
+}
+.content-comic-item-infors-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #A8A8A8;
+  line-height: 1.4;
+}
+.content-comic-item-infors-start {
+  width: 100%;
+  height: 32px;
+  background-color: #B90709;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 5px;
+}
+
+.time-active {
+  position: relative;
+}
+
+.time-active::after {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  left: 5%;
+  right: 5%;
+  border-bottom: 2px solid #B90709;
+}
+
+.id_normal {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.id_hover {
+  display: none !important;
+}
+
+.id_item:hover .id_normal {
+  display: none !important;
+}
+
+.id_item:hover .id_hover {
+  display: unset !important;
+}
+
+.manga-container {
+  position: relative;
+}
+
+.manga-banner {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+}
+.manga-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.manga-infors {
+  position: relative;
+  padding: 25px 250px;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+.manga-infors-common {
+  background-color: white;
+  width: 100%;
+  height: auto;
+  padding: 30px 70px;
+}
+.manga-infors-left {
+  width: 30%;
+  height: 390px;
+}
+.manga-infors-left-image {
+  border: 0.6px solid rgba(128, 128, 128, 0.4);
+  height: 88%;
+}
+.manga-infors-left-button {
+  width: 100%;
+  height: 35px;
+  margin-top: 10px;
+  padding-top: 6px;
+  background-color: #B90709;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+}
+.manga-infors-right {
+  width: 100%;
+  height: auto;
+  margin-left: 50px;
+}
+.manga-infors-right-heading {
+  margin-bottom: 10px;
+}
+.manga-infors-right-heading-name {
+  color: black;
+  font-weight: 600;
+  font-size: 45px;
+}
+.manga-infors-right-heading-bookmark {
+  font-size: 32px;
+  color: #B90709;
+}
+.manga-infors-right-lines {
+  font-size: 16px;
+  color: black;
+  margin-bottom: 7px;
+}
+.manga-infors-right-lines span:first-child {
+  font-weight: 600;
+}
+.manga-infors-right-lines span:last-child {
+  font-weight: 600;
+  color: #B90709;
+}
+.manga-infors-right-lines span:last-child i {
+  color: #FFD64E;
+}
+.manga-infors-right-desc {
+  color: black;
+  font-weight: 200;
+  line-height: 1.8;
+  margin-top: 25px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+.manga-infors-vol {
+  background-color: white;
+  width: 100%;
+  height: 700px;
+  margin-top: 25px;
+}
+.manga-infors-vol-heading {
+  padding: 20px;
+  background-color: #F5F5F5;
+}
+.manga-infors-vol-heading-left {
+  color: black;
+}
+.manga-infors-vol-heading-left span {
+  margin-right: 15px;
+  color: #B90709;
+  cursor: pointer;
+}
+.manga-infors-vol-heading-left div {
+  margin-right: 15px;
+}
+.manga-infors-vol-heading-left span:first-child {
+  font-weight: 600;
+  margin-left: 10px;
+  color: black;
+}
+.manga-infors-vol-heading-right select {
+  width: 150px;
+}
+
+.line-vertical {
+  border-left: 2px solid gray;
+  height: 12px;
+  margin-top: 5px;
+}
+
+/*# sourceMappingURL=styles.css.map */

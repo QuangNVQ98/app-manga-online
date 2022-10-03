@@ -1,0 +1,227 @@
+.find {
+  width: 100%;
+  min-height: 1250px;
+  margin-top: 20px;
+
+  &-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  &-container {
+    width: 100%;
+    height: auto;
+
+    &-category {
+      border: 1px solid rgb(128, 128, 128, 0.4);
+      border-radius: 20px;
+      padding: 10px 20px;
+      height: fit-content;
+      background-image: url("/assets/images/background3.png");
+
+    }
+  }
+
+  &-category {
+
+    &-title {
+      margin-bottom: 10px;
+      font-size: 25px;
+    }
+
+    &-line {
+      // div:last-child {
+      //   padding-left: 20px;
+      // }
+
+      padding: 10px 5px;
+
+      border-bottom: 0.5px solid rgb(128, 128, 128, 0.4);
+    }
+
+    &-name {
+        width: 50%;
+    }
+
+    &-name-1 {
+        width: 50%;
+        margin-bottom: 25px;
+        padding-right: 5px;
+    }
+  }
+
+  &-comic {
+    position: relative;
+    padding-left: 20px;
+
+    &-item {
+      width: 200px;
+      // height: 410px;
+      height: 350px;
+      // background-color: red;
+      margin-right: 28px;
+      margin-bottom: 30px;
+      position: relative;
+
+      &-image {
+        width: 200px;
+        height: 280px;
+        object-fit: cover;
+      }
+
+      &-name {
+        margin-top: 10px;
+        font-weight: 600;
+        margin-bottom: 10px !important;
+
+        font-size: 19px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+
+        &-hover {
+          font-size: 20px;
+
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-break: break-word;
+        }
+      }
+
+      &-vol {
+        font-size: 13px;
+        font-weight: 300;
+        margin-bottom: 2px !important;
+      }
+
+      &-time {
+        font-size: 10px;
+        font-weight: 100;
+        font-style: italic;
+      }
+
+      &-container {
+        background-color: white;
+        position: absolute;
+        width: 250px;
+        height: 410px;
+        bottom: -5px;
+        left: -20px;
+      }
+
+      &-image-hover {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+      }
+
+      &-heading {
+        width: 100%;
+        height: 43px;
+        background-color: $color-red-09;
+        padding: 10px 20px 0;
+
+        h5 {
+          font-weight: 600;
+        }
+      }
+
+      &-infors {
+        padding: 5px 30px;
+        color: black;
+
+        &-lines {
+          font-size: 14px;
+
+          span:first-child {
+            font-weight: 600;
+          }
+
+          span:last-child {
+            font-weight: 600;
+            color: $color-red-09;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+          }
+        }
+
+        &-desc {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-break: break-word;
+
+          margin-top: 10px;
+          font-size: 13px;
+          color: $color-gray-a8;
+          line-height: 1.4;
+        }
+
+        &-start {
+          width: 100%;
+          height: 32px;
+          background-color: $color-red-09;
+          font-size: 14px;
+          font-weight: 600;
+          color: white;
+          text-align: center;
+          margin-top: 10px;
+          padding-top: 5px;
+        }
+      }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      &-item {
+        width: 250px;
+        margin-right: 40px;
+        margin-left: 50px;
+      }
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+      &-item {
+        width: 280px;
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1399px) {
+      &-item {
+        width: 230px;
+        margin-right: 0px;
+        margin-left: 45px;
+      }
+    }
+  }
+}
+
+.id_find_hover {
+  display: none !important;
+  // z-index: 1;
+}
+
+.id_find_item:hover .id_find_normal {
+  display: none !important;
+}
+
+.id_find_item:hover .id_find_hover {
+  // z-index: -1 !important;
+  display: unset !important;
+  z-index: 99;
+}

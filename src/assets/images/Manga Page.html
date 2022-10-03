@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://127.0.0.1:5500/pages/manga-page.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <script src="./Manga Page_files/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="./Manga Page_files/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="./Manga Page_files/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    
+    
+
+    <title>Manga Page</title>
+  <style type="text/css" data-styled-components="FiaaB gTcftA caPIRE" data-styled-components-is-local="true">
+/* sc-component-id: sc-keyframes-FiaaB */
+@-webkit-keyframes FiaaB{100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes FiaaB{100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}
+/* sc-component-id: sc-keyframes-gTcftA */
+@-webkit-keyframes gTcftA{10%,90%{-webkit-transform:translate3d(-1px,0,0);-ms-transform:translate3d(-1px,0,0);transform:translate3d(-1px,0,0);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-4px,0,0);-ms-transform:translate3d(-4px,0,0);transform:translate3d(-4px,0,0);}40%,60%{-webkit-transform:translate3d(4px,0,0);-ms-transform:translate3d(4px,0,0);transform:translate3d(4px,0,0);}}@keyframes gTcftA{10%,90%{-webkit-transform:translate3d(-1px,0,0);-ms-transform:translate3d(-1px,0,0);transform:translate3d(-1px,0,0);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-4px,0,0);-ms-transform:translate3d(-4px,0,0);transform:translate3d(-4px,0,0);}40%,60%{-webkit-transform:translate3d(4px,0,0);-ms-transform:translate3d(4px,0,0);transform:translate3d(4px,0,0);}}
+/* sc-component-id: sc-keyframes-caPIRE */
+@-webkit-keyframes caPIRE{0%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}20%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}40%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}60%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}80%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}100%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}}@keyframes caPIRE{0%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}20%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}40%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}60%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}80%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}100%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}}</style><style>
+      .glot-sub-active{
+        color: #1296ba !important;
+      }
+      
+      .glot-sub-hovered{
+        color: #1296ba !important;
+      }
+      .glot-sub-clzz{
+        cursor: pointer;
+        
+        lineHeight: 1.2;
+          font-size: 28px;
+          color: #FFCC00; background: rgba(17, 17, 17, 0.7);
+        
+      }
+      .glot-sub-clzz:hover{
+        color: #1296ba !important;
+      }
+      .ej-trans-sub{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999999;
+        cursor: move;
+      }
+      .ej-trans-sub > span{
+        color: #3CF9ED;
+        font-size: 18px;
+        text-align: center;
+        padding: 0 16px;
+        line-height: 1.5;
+        background: rgba(32, 26, 25, 0.8);
+        // text-shadow: 0px 1px 4px black;
+        padding: 0 8px;
+        
+        lineHeight: 1.2;
+        font-size: 16px;
+        color: #0CB1C7; background: rgba(67, 65, 65, 0.7);
+      
+      }
+      .ej-main-sub{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999999;
+        cursor: move;
+        padding: 0 8px;
+      }
+      .ej-main-sub > span{
+        color: white;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        background: rgba(32, 26, 25, 0.8);
+        // text-shadow: 0px 1px 4px black;
+        padding: 2px 8px;
+        
+        lineHeight: 1.2;
+          font-size: 28px;
+          color: #FFCC00; background: rgba(17, 17, 17, 0.7);
+        
+      }
+
+      .ej-main-sub .glot-sub-clzz{
+        background: transparent !important
+      }
+
+      .tran-subtitle > .view-icon-edit-sub{
+        cursor: pointer;
+        padding-left: 10px;
+        top: 2px;
+        position: relative;
+      }
+
+      .tran-subtitle > .view-icon-edit-sub > svg{
+        width: 16px;
+        height: 16px;
+        pointer-events: none;
+      }
+      
+      </style><link rel="preconnect" href="https://fonts.gstatic.com/"><link href="./Manga Page_files/css2" rel="stylesheet"><link href="./Manga Page_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"><link rel="stylesheet" href="./Manga Page_files/styles.css"><link rel="stylesheet" href="./Manga Page_files/all.css"></head>
+  <body>
+    <header id="header" class="p-2 text-white">
+      <div class="container">
+        <div class="
+            d-flex
+            flex-wrap
+            align-items-center
+            justify-content-center justify-content-lg-start
+          ">
+          <ul class="
+              nav
+              col-12 col-lg-auto
+              me-lg-auto
+              mb-2
+              justify-content-center
+              mb-md-0
+              m-r-auto
+            ">
+            <li>
+              <a href="http://127.0.0.1:5500/pages/manga-page.html#" class="
+                  nav-link
+                  text-white
+                  font-size-18 font-weight-600
+                  link-active
+                ">Home</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/pages/manga-page.html#" class="nav-link text-white font-size-18 font-weight-600">New Releases</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/pages/manga-page.html#" class="nav-link text-white font-size-18 font-weight-600">Popular</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/pages/manga-page.html#" class="nav-link text-white font-size-18 font-weight-600">Browse</a>
+            </li>
+          </ul>
+
+          <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 header-search">
+            <input class="header-search-input" type="text" placeholder="Type title, author, or genre">
+            <i class="fa fa-search header-search-icon cursor-pointer"></i>
+          </div>
+
+          <div class="text-end header-action">
+            <span id="icon-bookmark" class="cursor-pointer"><i class="fa fa-bookmark header-icon-bookmark"></i></span>
+            <span class="cursor-pointer">
+              <i class="fa fa-user-circle header-icon-user"></i>
+              <i class="fa fa-angle-down header-icon-more"></i>
+            </span>
+
+            <div id="header-bookmark-id" class="header-bookmark d-flex flex-column is-display">
+              <div class="header-bookmark-item d-flex align-items-center">
+                <div class="header-bookmark-item-container-image new-bookmark">
+                  <img src="./Manga Page_files/content2.jpeg" alt="" class="header-bookmark-item-image">
+                </div>
+                <div class="
+                    d-flex
+                    flex-column
+                    header-bookmark-item-container-infors
+                  ">
+                  <span class="header-bookmark-item-name">Berserk</span>
+                  <span class="header-bookmark-item-vol">LASTEST: <b>VOL. 12</b></span>
+                </div>
+              </div>
+              <div class="header-bookmark-item d-flex align-items-center">
+                <div class="header-bookmark-item-container-image new-bookmark">
+                  <img src="./Manga Page_files/content3.png" alt="" class="header-bookmark-item-image">
+                </div>
+                <div class="
+                    d-flex
+                    flex-column
+                    header-bookmark-item-container-infors
+                  ">
+                  <span class="header-bookmark-item-name">One Piece</span>
+                  <span class="header-bookmark-item-vol">LASTEST: <b>VOL. 12</b></span>
+                </div>
+              </div>
+              <div class="header-bookmark-item d-flex align-items-center">
+                <div class="header-bookmark-item-container-image new-bookmark">
+                  <img src="./Manga Page_files/content4.jpeg" alt="" class="header-bookmark-item-image">
+                </div>
+                <div class="
+                    d-flex
+                    flex-column
+                    header-bookmark-item-container-infors
+                  ">
+                  <span class="header-bookmark-item-name">Bleach</span>
+                  <span class="header-bookmark-item-vol">LASTEST: <b>VOL. 12</b></span>
+                </div>
+              </div>
+              <div class="header-bookmark-item d-flex align-items-center">
+                <div class="header-bookmark-item-container-image">
+                  <img src="./Manga Page_files/content5.jpeg" alt="" class="header-bookmark-item-image">
+                </div>
+                <div class="
+                    d-flex
+                    flex-column
+                    header-bookmark-item-container-infors
+                  ">
+                  <span class="header-bookmark-item-name">Chainsaw Man</span>
+                  <span class="header-bookmark-item-vol">LASTEST: <b>VOL. 12</b></span>
+                </div>
+              </div>
+
+              <div class="
+                  header-bookmark-more
+                  mt-auto
+                  d-flex
+                  align-items-center
+                  justify-content-center
+                ">
+                <span class="cursor-pointer"> View all saved mangas (12) </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="manga-container">
+      <div class="manga-banner">
+        <img src="./Manga Page_files/banner2.jpeg" alt="" class="manga-banner-image">
+      </div>
+
+      <div class="manga-infors">
+        <div class="manga-infors-common d-flex">
+          <div class="manga-infors-left d-flex flex-column">
+            <img src="./Manga Page_files/content2.jpeg" alt="" class="manga-infors-left-image">
+            <div class="manga-infors-left-button">Start reading Vol. 1</div>
+          </div>
+
+          <div class="manga-infors-right">
+            <div class="manga-infors-right-heading d-flex">
+              <h1 class="manga-infors-right-heading-name">Haikyu</h1>
+              <span class="cursor-pointer m-l-auto m-t-auto m-b-auto"><i class="fa fa-bookmark manga-infors-right-heading-bookmark"></i></span>
+            </div>
+            <div class="manga-infors-right-lines row">
+              <span class="col-sm-4">Genre: </span>
+              <span class="col-sm-8">Sports</span>
+            </div>
+            <div class="manga-infors-right-lines row">
+              <span class="col-sm-4">Artist: </span>
+              <span class="col-sm-8">Haruichi Furudate</span>
+            </div>
+            <div class="manga-infors-right-lines row">
+              <span class="col-sm-4">Lastest Update: </span>
+              <span class="col-sm-8">VOL. 26</span>
+            </div>
+            <div class="manga-infors-right-lines row">
+              <span class="col-sm-4">Ratings: </span>
+              <span class="col-sm-8">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </span>
+            </div>
+
+            <div class="manga-infors-right-desc">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla
+              laboriosam fuga itaque facilis non ratione earum porro dicta
+              labore enim id natus, exercitationem alias numquam officiis
+              aliquid omnis repellendus provident! Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit. Enim quo deleniti asperiores rem
+              itaque dignissimos fugiat non unde temporibus, delectus
+              consectetur eius debitis perferendis at ipsa illo! Asperiores,
+              voluptatibus distinctio.
+             
+            </div>
+
+          </div>
+        </div>
+
+        <div class="manga-infors-vol">
+          <div class="manga-infors-vol-heading d-flex">
+            <div class="manga-infors-vol-heading-left d-flex">
+              <span>VOL. </span>
+              <div class="line-vertical"></div>
+              <span>CH. </span>
+              <div class="line-vertical"></div>
+              <span>Slide Stories</span>
+              <div class="line-vertical"></div>
+              <span>Gallery</span>
+
+            </div>
+            <div class="manga-infors-vol-heading-right m-l-auto">
+              <select name="sort" id="sort">
+                <option value="1">From Lastest</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row footer-container">
+          <div class="col-sm-6 footer-infors">
+            <div class="footer-infors-heading d-flex">
+              <img src="./Manga Page_files/logo5-trans.png" alt="" class="footer-infors-logo">
+              <p class="footer-infors-slogan">Reading mode</p>
+            </div>
+
+            <p class="footer-infors-desc">
+              Đây là website đọc truyện tranh miễn phí được làm ra để thoả mã
+              đam mê của admin .-. Mọi thông tin và hình ảnh trên website đều
+              được sưu tầm trên Internet, chúng tôi không sở hữu hay chịu trách
+              nhiệm bất kỳ thông tin nào trên web này. Nếu làm ảnh hưởng đến cá
+              nhân hay tổ chức nào, khi được yêu cầu, chúng tôi sẽ xem xét và gỡ
+              bỏ ngay lập tức.
+            </p>
+            <p class="footer-infors-contact">
+              Liên hệ: <b class="footer-infors-email">quangnvq1998@gmail.com</b>
+            </p>
+          </div>
+          <div class="col-sm-6 footer-category">
+            <div class="footer-category-container d-flex flex-wrap">
+              <div class="footer-category-item">Action</div>
+              <div class="footer-category-item">Adventure</div>
+              <div class="footer-category-item">Action</div>
+              <div class="footer-category-item">Comedy</div>
+              <div class="footer-category-item">Fantasy</div>
+              <div class="footer-category-item">Manga</div>
+              <div class="footer-category-item">Live action</div>
+              <div class="footer-category-item">Mystery</div>
+              <div class="footer-category-item">Sport</div>
+              <div class="footer-category-item">School live</div>
+              <!-- <div class="footer-category-item">
+                Webtoon
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./Manga Page_files/index.js"></script>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;" src="./Manga Page_files/saved_resource.html"></iframe></body></html>

@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+
+  // firefox
+  scrollbar-width: $scroll-bar-width;
+  // ie edge
+  -ms-overflow-style: auto;
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: $scroll-bar-width;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f0f2f5;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #bcc0c4;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #bcc0c4;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $color-background;
+  color: white;
+
+  a {
+    color: unset;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+ul > li {
+  list-style-type: none;
+}

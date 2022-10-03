@@ -1,0 +1,726 @@
+<section class="banner">
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div
+          class="carousel-item active banner-item"
+          data-bs-interval="25000"
+        >
+          <img src="/assets/images/naruto2.png" class="d-block w-100" alt="..." />
+          <div class="banner-item-container">
+            <h6 class="banner-item-category">FEATURE MANGA</h6>
+            <h1 class="banner-item-name">NARUTO</h1>
+            <p class="banner-item-desc">
+              The best selling mangas is now available on quangnvq.com. Check
+              out the complete series for free!
+            </p>
+            <div class="banner-item-read cursor-pointer">
+              <p (click)="goToNaruto()">Read now</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="25000">
+          <img src="/assets/images/naruto3.jpeg" class="d-block w-100" alt="..." />
+          <div class="banner-item-container">
+            <h6 class="banner-item-category">FEATURE MANGA</h6>
+            <h1 class="banner-item-name">NARUTO</h1>
+            <p class="banner-item-desc">
+              The best selling mangas is now available on quangnvq.com. Check
+              out the complete series for free!
+            </p>
+            <div class="banner-item-read cursor-pointer">
+              <p (click)="goToNaruto()">Read now</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="25000">
+          <img src="/assets/images/naruto6.png" class="d-block w-100" alt="..." />
+          <div class="banner-item-container">
+            <h6 class="banner-item-category">FEATURE MANGA</h6>
+            <h1 class="banner-item-name">NARUTO</h1>
+            <p class="banner-item-desc">
+              The best selling mangas is now available on quangnvq.com. Check
+              out the complete series for free!
+            </p>
+            <div class="banner-item-read cursor-pointer">
+              <p (click)="goToNaruto()">Read now</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span><i class="fa fa-angle-left banner-icon-slider"></i></span>
+
+        <!-- <span class="visually-hidden">Previous</span> -->
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span><i class="fa fa-angle-right banner-icon-slider"></i></span>
+        <!-- <span class="visually-hidden">Next</span> -->
+      </button>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container position-relative">
+      <div class="content-heading d-flex">
+        <h2 class="content-heading-name">Truyện mới</h2>
+
+        <!-- <ul class="content-heading-time ms-auto d-flex">
+          <li class="content-heading-time-item">Today</li>
+          <li class="content-heading-time-item">Yesterday</li>
+          <li class="content-heading-time-item">All</li>
+        </ul> -->
+      </div>
+
+      <div class="content-comic d-flex flex-wrap justify-content-start">
+
+        <ng-template ngFor let-item [ngForOf] ="comics" let-i="index">
+            <div class="content-comic-item d-flex flex-column id_item">
+                <div class="d-flex flex-column id_normal">
+                  <img
+                    src="{{item.thumbnail}}"
+                    alt=""
+                    class="content-comic-item-image"
+                  />
+                  <div class="content-comic-item-name">{{item.title}}</div>
+                  <p class="content-comic-item-vol">{{item.chapter}}</p>
+                  <p class="content-comic-item-time">UPDATE {{item.updated}}</p>
+                </div>
+      
+                <div
+                  class="d-flex flex-column content-comic-item-container id_hover"
+                >
+                  <img
+                    src="{{item.thumbnail}}"
+                    alt=""
+                    class="content-comic-item-image-hover"
+                  />
+                  <div
+                    class="
+                      content-comic-item-heading
+                      d-flex
+                      justify-content-between
+                    "
+                  >
+                    <div class="content-comic-item-name-hover">{{item.title}}</div>
+                    <span class="cursor-pointer"
+                      ><i class="fa fa-bookmark header-icon-bookmark"></i
+                    ></span>
+                  </div>
+                  <div class="content-comic-item-infors d-flex flex-column">
+                    <div class="content-comic-item-infors-lines row">
+                      <span class="col-sm-4">Genre: </span>
+                      <span class="col-sm-8">{{item.category}}</span>
+                    </div>
+                    <div class="content-comic-item-infors-lines row">
+                      <span class="col-sm-4">Status: </span>
+                      <span class="col-sm-8">{{item.status}}</span>
+                    </div>
+                    <div class="content-comic-item-infors-lines row">
+                      <span class="col-sm-4">View: </span>
+                      <span class="col-sm-8">{{item.view_count}}</span>
+                    </div>
+      
+                    <div class="content-comic-item-infors-desc">
+                      {{item.desc}}
+                    </div>
+      
+                    <div class="content-comic-item-infors-start cursor-pointer" (click)="doReading(item)">
+                      Start reading 
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </ng-template>
+
+        <!-- <div class="content-comic-item d-flex flex-column id_item">
+          <div class="d-flex flex-column id_normal">
+            <img
+              src="/assets/images/content12.png"
+              alt=""
+              class="content-comic-item-image"
+            />
+            <h5 class="content-comic-item-name">Naruto</h5>
+            <p class="content-comic-item-vol">VOL. 23</p>
+            <p class="content-comic-item-time">UPDATE 01/01/2021</p>
+          </div>
+
+          <div
+            class="d-flex flex-column content-comic-item-container id_hover"
+          >
+            <img
+              src="/assets/images/content1.jpeg"
+              alt=""
+              class="content-comic-item-image-hover"
+            />
+            <div
+              class="
+                content-comic-item-heading
+                d-flex
+                justify-content-between
+              "
+            >
+              <h5 class="content-comic-item-name-hover">Naruto</h5>
+              <span class="cursor-pointer"
+                ><i class="fa fa-bookmark header-icon-bookmark"></i
+              ></span>
+            </div>
+            <div class="content-comic-item-infors d-flex flex-column">
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Genre: </span>
+                <span class="col-sm-8">Sports</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Artist: </span>
+                <span class="col-sm-8">Isayama</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Update: </span>
+                <span class="col-sm-8">VOL. 26</span>
+              </div>
+
+              <div class="content-comic-item-infors-desc">
+                Gol D. Roger, a man referred to as the "Pirate King," is set
+                to be executed by the World Government.
+              </div>
+
+              <div class="content-comic-item-infors-start cursor-pointer">
+                Start reading Vol. 1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-comic-item d-flex flex-column id_item">
+          <div class="d-flex flex-column id_normal">
+            <img
+              src="/assets/images/content2.jpeg"
+              alt=""
+              class="content-comic-item-image"
+            />
+            <h5 class="content-comic-item-name">Berserk</h5>
+            <p class="content-comic-item-vol">VOL. 23</p>
+            <p class="content-comic-item-time">UPDATE 01/01/2021</p>
+          </div>
+
+          <div
+            class="d-flex flex-column content-comic-item-container id_hover"
+          >
+            <img
+              src="/assets/images/content2.jpeg"
+              alt=""
+              class="content-comic-item-image-hover"
+            />
+            <div
+              class="
+                content-comic-item-heading
+                d-flex
+                justify-content-between
+              "
+            >
+              <h5 class="content-comic-item-name-hover">Berserk</h5>
+              <span class="cursor-pointer"
+                ><i class="fa fa-bookmark header-icon-bookmark"></i
+              ></span>
+            </div>
+            <div class="content-comic-item-infors d-flex flex-column">
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Genre: </span>
+                <span class="col-sm-8">Sports</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Artist: </span>
+                <span class="col-sm-8">Isayama</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Update: </span>
+                <span class="col-sm-8">VOL. 26</span>
+              </div>
+
+              <div class="content-comic-item-infors-desc">
+                Gol D. Roger, a man referred to as the "Pirate King," is set
+                to be executed by the World Government.
+              </div>
+
+              <div class="content-comic-item-infors-start cursor-pointer">
+                Start reading Vol. 1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-comic-item d-flex flex-column id_item">
+          <div class="d-flex flex-column id_normal">
+            <img
+              src="/assets/images/content3.png"
+              alt=""
+              class="content-comic-item-image"
+            />
+            <h5 class="content-comic-item-name">One Piece</h5>
+            <p class="content-comic-item-vol">VOL. 23</p>
+            <p class="content-comic-item-time">UPDATE 01/01/2021</p>
+          </div>
+
+          <div
+            class="d-flex flex-column content-comic-item-container id_hover"
+          >
+            <img
+              src="/assets/images/content3.png"
+              alt=""
+              class="content-comic-item-image-hover"
+            />
+            <div
+              class="
+                content-comic-item-heading
+                d-flex
+                justify-content-between
+              "
+            >
+              <h5 class="content-comic-item-name-hover">One Piece</h5>
+              <span class="cursor-pointer"
+                ><i class="fa fa-bookmark header-icon-bookmark"></i
+              ></span>
+            </div>
+            <div class="content-comic-item-infors d-flex flex-column">
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Genre: </span>
+                <span class="col-sm-8">Sports</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Artist: </span>
+                <span class="col-sm-8">Isayama</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Update: </span>
+                <span class="col-sm-8">VOL. 26</span>
+              </div>
+
+              <div class="content-comic-item-infors-desc">
+                Gol D. Roger, a man referred to as the "Pirate King," is set
+                to be executed by the World Government.
+              </div>
+
+              <div class="content-comic-item-infors-start cursor-pointer">
+                Start reading Vol. 1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-comic-item d-flex flex-column id_item">
+          <div class="d-flex flex-column id_normal">
+            <img
+              src="/assets/images/content4.jpeg"
+              alt=""
+              class="content-comic-item-image"
+            />
+            <h5 class="content-comic-item-name">Bleach</h5>
+            <p class="content-comic-item-vol">VOL. 23</p>
+            <p class="content-comic-item-time">UPDATE 01/01/2021</p>
+          </div>
+
+          <div
+            class="d-flex flex-column content-comic-item-container id_hover"
+          >
+            <img
+              src="/assets/images/content4.jpeg"
+              alt=""
+              class="content-comic-item-image-hover"
+            />
+            <div
+              class="
+                content-comic-item-heading
+                d-flex
+                justify-content-between
+              "
+            >
+              <h5 class="content-comic-item-name-hover">Bleach</h5>
+              <span class="cursor-pointer"
+                ><i class="fa fa-bookmark header-icon-bookmark"></i
+              ></span>
+            </div>
+            <div class="content-comic-item-infors d-flex flex-column">
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Genre: </span>
+                <span class="col-sm-8">Sports</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Artist: </span>
+                <span class="col-sm-8">Isayama</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Update: </span>
+                <span class="col-sm-8">VOL. 26</span>
+              </div>
+
+              <div class="content-comic-item-infors-desc">
+                Gol D. Roger, a man referred to as the "Pirate King," is set
+                to be executed by the World Government.
+              </div>
+
+              <div class="content-comic-item-infors-start cursor-pointer">
+                Start reading Vol. 1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-comic-item d-flex flex-column id_item">
+          <div class="d-flex flex-column id_normal">
+            <img
+              src="/assets/images/content2.jpeg"
+              alt=""
+              class="content-comic-item-image"
+            />
+            <h5 class="content-comic-item-name">Chainsaw Man</h5>
+            <p class="content-comic-item-vol">VOL. 23</p>
+            <p class="content-comic-item-time">UPDATE 01/01/2021</p>
+          </div>
+
+          <div
+            class="d-flex flex-column content-comic-item-container id_hover"
+          >
+            <img
+              src="/assets/images/content2.jpeg"
+              alt=""
+              class="content-comic-item-image-hover"
+            />
+            <div
+              class="
+                content-comic-item-heading
+                d-flex
+                justify-content-between
+              "
+            >
+              <h5 class="content-comic-item-name-hover">Chainsaw Man</h5>
+              <span class="cursor-pointer"
+                ><i class="fa fa-bookmark header-icon-bookmark"></i
+              ></span>
+            </div>
+            <div class="content-comic-item-infors d-flex flex-column">
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Genre: </span>
+                <span class="col-sm-8">Sports</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Artist: </span>
+                <span class="col-sm-8">Isayama</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Update: </span>
+                <span class="col-sm-8">VOL. 26</span>
+              </div>
+
+              <div class="content-comic-item-infors-desc">
+                Gol D. Roger, a man referred to as the "Pirate King," is set
+                to be executed by the World Government.
+              </div>
+
+              <div class="content-comic-item-infors-start cursor-pointer">
+                Start reading Vol. 1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-comic-item d-flex flex-column id_item">
+          <div class="d-flex flex-column id_normal">
+            <img
+              src="/assets/images/content6.jpeg"
+              alt=""
+              class="content-comic-item-image"
+            />
+            <h5 class="content-comic-item-name">Solo Leveling</h5>
+            <p class="content-comic-item-vol">VOL. 23</p>
+            <p class="content-comic-item-time">UPDATE 01/01/2021</p>
+          </div>
+
+          <div
+            class="d-flex flex-column content-comic-item-container id_hover"
+          >
+            <img
+              src="/assets/images/content6.jpeg"
+              alt=""
+              class="content-comic-item-image-hover"
+            />
+            <div
+              class="
+                content-comic-item-heading
+                d-flex
+                justify-content-between
+              "
+            >
+              <h5 class="content-comic-item-name-hover">Solo Leveling</h5>
+              <span class="cursor-pointer"
+                ><i class="fa fa-bookmark header-icon-bookmark"></i
+              ></span>
+            </div>
+            <div class="content-comic-item-infors d-flex flex-column">
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Genre: </span>
+                <span class="col-sm-8">Sports</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Artist: </span>
+                <span class="col-sm-8">Isayama</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Update: </span>
+                <span class="col-sm-8">VOL. 26</span>
+              </div>
+
+              <div class="content-comic-item-infors-desc">
+                Gol D. Roger, a man referred to as the "Pirate King," is set
+                to be executed by the World Government.
+              </div>
+
+              <div class="content-comic-item-infors-start cursor-pointer">
+                Start reading Vol. 1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-comic-item d-flex flex-column id_item">
+          <div class="d-flex flex-column id_normal">
+            <img
+              src="/assets/images/content7.jpeg"
+              alt=""
+              class="content-comic-item-image"
+            />
+            <h5 class="content-comic-item-name">Fairy Tail</h5>
+            <p class="content-comic-item-vol">VOL. 23</p>
+            <p class="content-comic-item-time">UPDATE 01/01/2021</p>
+          </div>
+
+          <div
+            class="d-flex flex-column content-comic-item-container id_hover"
+          >
+            <img
+              src="/assets/images/content7.jpeg"
+              alt=""
+              class="content-comic-item-image-hover"
+            />
+            <div
+              class="
+                content-comic-item-heading
+                d-flex
+                justify-content-between
+              "
+            >
+              <h5 class="content-comic-item-name-hover">Fairy Tail</h5>
+              <span class="cursor-pointer"
+                ><i class="fa fa-bookmark header-icon-bookmark"></i
+              ></span>
+            </div>
+            <div class="content-comic-item-infors d-flex flex-column">
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Genre: </span>
+                <span class="col-sm-8">Sports</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Artist: </span>
+                <span class="col-sm-8">Isayama</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Update: </span>
+                <span class="col-sm-8">VOL. 26</span>
+              </div>
+
+              <div class="content-comic-item-infors-desc">
+                Gol D. Roger, a man referred to as the "Pirate King," is set
+                to be executed by the World Government.
+              </div>
+
+              <div class="content-comic-item-infors-start cursor-pointer">
+                Start reading Vol. 1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-comic-item d-flex flex-column id_item">
+          <div class="d-flex flex-column id_normal">
+            <img
+              src="/assets/images/content8.png"
+              alt=""
+              class="content-comic-item-image"
+            />
+            <h5 class="content-comic-item-name">Vagabond</h5>
+            <p class="content-comic-item-vol">VOL. 23</p>
+            <p class="content-comic-item-time">UPDATE 01/01/2021</p>
+          </div>
+
+          <div
+            class="d-flex flex-column content-comic-item-container id_hover"
+          >
+            <img
+              src="/assets/images/content8.png"
+              alt=""
+              class="content-comic-item-image-hover"
+            />
+            <div
+              class="
+                content-comic-item-heading
+                d-flex
+                justify-content-between
+              "
+            >
+              <h5 class="content-comic-item-name-hover">Vagabond</h5>
+              <span class="cursor-pointer"
+                ><i class="fa fa-bookmark header-icon-bookmark"></i
+              ></span>
+            </div>
+            <div class="content-comic-item-infors d-flex flex-column">
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Genre: </span>
+                <span class="col-sm-8">Sports</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Artist: </span>
+                <span class="col-sm-8">Isayama</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Update: </span>
+                <span class="col-sm-8">VOL. 26</span>
+              </div>
+
+              <div class="content-comic-item-infors-desc">
+                Gol D. Roger, a man referred to as the "Pirate King," is set
+                to be executed by the World Government.
+              </div>
+
+              <div class="content-comic-item-infors-start cursor-pointer">
+                Start reading Vol. 1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-comic-item d-flex flex-column id_item">
+          <div class="d-flex flex-column id_normal">
+            <img
+              src="/assets/images/content9.png"
+              alt=""
+              class="content-comic-item-image"
+            />
+            <h5 class="content-comic-item-name">Vinland Saga</h5>
+            <p class="content-comic-item-vol">VOL. 23</p>
+            <p class="content-comic-item-time">UPDATE 01/01/2021</p>
+          </div>
+
+          <div
+            class="d-flex flex-column content-comic-item-container id_hover"
+          >
+            <img
+              src="/assets/images/content9.png"
+              alt=""
+              class="content-comic-item-image-hover"
+            />
+            <div
+              class="
+                content-comic-item-heading
+                d-flex
+                justify-content-between
+              "
+            >
+              <h5 class="content-comic-item-name-hover">Vinland Saga</h5>
+              <span class="cursor-pointer"
+                ><i class="fa fa-bookmark header-icon-bookmark"></i
+              ></span>
+            </div>
+            <div class="content-comic-item-infors d-flex flex-column">
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Genre: </span>
+                <span class="col-sm-8">Sports</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Artist: </span>
+                <span class="col-sm-8">Isayama</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Update: </span>
+                <span class="col-sm-8">VOL. 26</span>
+              </div>
+
+              <div class="content-comic-item-infors-desc">
+                Gol D. Roger, a man referred to as the "Pirate King," is set
+                to be executed by the World Government.
+              </div>
+
+              <div class="content-comic-item-infors-start cursor-pointer">
+                Start reading Vol. 1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-comic-item d-flex flex-column id_item">
+          <div class="d-flex flex-column id_normal">
+            <img
+              src="/assets/images/content10.jpeg"
+              alt=""
+              class="content-comic-item-image"
+            />
+            <h5 class="content-comic-item-name">Claymore</h5>
+            <p class="content-comic-item-vol">VOL. 23</p>
+            <p class="content-comic-item-time">UPDATE 01/01/2021</p>
+          </div>
+
+          <div
+            class="d-flex flex-column content-comic-item-container id_hover"
+          >
+            <img
+              src="/assets/images/content10.jpeg"
+              alt=""
+              class="content-comic-item-image-hover"
+            />
+            <div
+              class="
+                content-comic-item-heading
+                d-flex
+                justify-content-between
+              "
+            >
+              <h5 class="content-comic-item-name-hover">Claymore</h5>
+              <span class="cursor-pointer"
+                ><i class="fa fa-bookmark header-icon-bookmark"></i
+              ></span>
+            </div>
+            <div class="content-comic-item-infors d-flex flex-column">
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Genre: </span>
+                <span class="col-sm-8">Sports</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Artist: </span>
+                <span class="col-sm-8">Isayama</span>
+              </div>
+              <div class="content-comic-item-infors-lines row">
+                <span class="col-sm-4">Update: </span>
+                <span class="col-sm-8">VOL. 26</span>
+              </div>
+
+              <div class="content-comic-item-infors-desc">
+                Gol D. Roger, a man referred to as the "Pirate King," is set
+                to be executed by the World Government.
+              </div>
+
+              <div class="content-comic-item-infors-start cursor-pointer">
+                Start reading Vol. 1
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div *ngIf="showLoading" class="container-loading">
+      <div class="spinner-border text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </section>

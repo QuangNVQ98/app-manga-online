@@ -1,0 +1,58 @@
+<section class="reading position-relative">
+  <div *ngIf="showLoading" class="container-loading">
+    <div class="spinner-border text-danger" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div id="reading-header" class="reading-heading d-flex">
+    <div class="container d-flex m-t-auto m-b-auto">
+      <div class="reading-heading-left d-flex">
+        <span class="reading-heading-left-menu cursor-pointer">Trang chủ</span>
+        <span class="reading-heading-left-icon">
+          <i class="fa fa-chevron-right"></i>
+        </span>
+        <span class="reading-heading-left-menu cursor-pointer">Thể loại</span>
+        <span class="reading-heading-left-icon">
+          <i class="fa fa-chevron-right"></i>
+        </span>
+        <span class="reading-heading-left-menu cursor-pointer" (click)="doNavigate(nav.path)">{{nav.title}}</span>
+        <span class="reading-heading-left-icon">
+          <i class="fa fa-chevron-right"></i>
+        </span>
+
+        <select name="vol" id="vol" class="reading-heading-left-select" (change)="onChangeChapter($event)">
+          <ng-template ngFor let-item [ngForOf]="arr_chapter" let-i="index">
+            <option value="{{item.value}}" selected="{{item?.selected}}">{{item.label}}</option>
+          </ng-template>
+        </select>
+
+        <div class="reading-heading-left-button cursor-pointer" (click)="doReadNext()">Read next</div>
+      </div>
+      <div class="reading-heading-right d-flex m-l-auto">
+        <div class="reading-heading-right-item d-flex flex-column">
+          <span><i class="fa fa-bookmark"></i></span>
+          <span>Save Manga</span>
+        </div>
+        <div class="reading-heading-right-item d-flex flex-column">
+          <span><i class="fa fa-cog"></i></span>
+          <span>Reading Mode</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reading-comic d-flex flex-column container">
+    <ng-template ngFor let-item [ngForOf]="arr_images" let-i="index">
+      <div class="reading-comic-item">
+        <img
+          src="{{item}}"
+          alt=""
+          class="reading-comic-image"
+        />
+      </div>
+    </ng-template>
+  </div>
+
+  
+
+</section>
